@@ -29,7 +29,8 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.quadraticCurveTo(20, 160, 40, 115);
   ctx.moveTo(40, 115);
   ctx.quadraticCurveTo(20,40, 100, 50);
-  ctx.closePath();
+  ctx.moveTo(100, 50);
+
   ctx.stroke();
 
 }
