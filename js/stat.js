@@ -1,6 +1,5 @@
 'use strict';
-var CLOUD_WIDTH = 420;
-var CLOUD_HEIGHT = 270;
+
 var CLOUD_X = 100;
 var CLOUD_Y = 10;
 var GAP = 10;
@@ -64,7 +63,7 @@ window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff', 0);
 
   var maxTime = getMaxElement(times);
-
+  ctx.font = '16px PT Mono';
   for (var i = 0; i < players.length; i++) {
     var barHeight = (BAR_HEIGHT * times[i]) / maxTime;
     ctx.fillStyle = '#000';
