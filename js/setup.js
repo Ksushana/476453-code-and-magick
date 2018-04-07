@@ -8,7 +8,7 @@ var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 var userSetup = document.querySelector('.setup');
 userSetup.classList.remove('hidden');
 
-var similarListElement = document.querySelector('.setup-similar-list');
+var similarListElement = userSetup.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
 
