@@ -8,8 +8,6 @@ var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 var userSetup = document.querySelector('.setup');
 userSetup.classList.remove('hidden');
 
-document.querySelector('.setup-similar').classList.remove('hidden');
-
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
@@ -43,8 +41,6 @@ var createWizards = function (wizards) {
   }
   similarListElement.appendChild(fragment);
 };
-
-// main
 
 var wizardData = generateWizardData(4);
 createWizards(wizardData);
