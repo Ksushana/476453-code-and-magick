@@ -52,7 +52,7 @@ var setupClose = userSetup.querySelector('.setup-close');
 var ESC = 27;
 var ENTER = 13;
 
-var onPopupEscPress = function(evt) {
+var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC) {
     closePopup();
   }
@@ -111,24 +111,30 @@ userNameInput.addEventListener('input', function (evt) {
 
 var setupWizard = document.querySelector('.setup-wizard');
 var wizardEyes = setupWizard.querySelector('.wizard-eyes');
+var inputEyes = document.querySelector('input[name="eyes-color"]');
 
 var fireballWrap = document.querySelector('.setup-fireball-wrap');
-// var fireball = fireballWrap.querySelector('.setup-fireball');
+var inputBall = fireballWrap.querySelector('input');
 
 var WIZARD_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
 var FIREBALL_COLOR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
-
-var changeColor = function (arr, wizardStyle) {
-  var rand = Math.floor(Math.random() * arr.length);
-  wizardStyle.style.fill = arr[rand];
+var getRandomColor = function (arr) {
+  var color = arr[Math.floor(Math.random() * arr.length)];
+  return color;
 };
 
-wizardEyes.addEventListener('click', function () {
-  changeColor(WIZARD_EYES, wizardEyes);
-});
+var changeEyesColor = function () {
+  var EyeColor = getRandomColor(WIZARD_EYES);
+  wizardEyes.style.fill = EyeColor;
+  inputEyes.value = EyeColor;
+};
 
-fireballWrap.addEventListener('click', function () {
-  var rand = Math.floor(Math.random() * FIREBALL_COLOR.length);
-  fireballWrap.style.background = FIREBALL_COLOR[rand];
-});
+var changeFireballColor = function () {
+  var ballColor = getRandomColor(FIREBALL_COLOR);
+  fireballWrap.style.background = ballColor;
+  inputBall.value = ballColor;
+};
+
+wizardEyes.addEventListener('click', changeEyesColor);
+fireballWrap.addEventListener('click', changeFireballColor);
